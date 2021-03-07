@@ -6,6 +6,5 @@ Obviously this will only work for the website that is set to 'url' variable by m
 
 -You need "chromedriver.exe" to be in the same directory as the "autoJoin.py" file.\
 -You must install necessary libraries using pip.\
--You can use your own .env file or just hard code all the necessary fields in the script such as username, password, senderMail etc.\
+-You can use your own .env file or just hard code all the necessary fields in the script such as username, password, senderMail etc.
 
-....
