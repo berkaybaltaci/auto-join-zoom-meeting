@@ -315,8 +315,8 @@ schedule.every().wednesday.at("13:03").do(turkce1_func)
 schedule.every().monday.at("16:40").do(lojik_func)
 
 
-print('*** EKRANI AYARLAMAYI UNUTMA ***')
-print('*** EKRANI AYARLAMAYI UNUTMA ***')
+print('*** OLCEGI 100% YAPMAYI UNUTMA ***')
+print('*** OLCEGI 100% YAPMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
 
