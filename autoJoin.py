@@ -298,23 +298,26 @@ def turkce1_func():
         sendMail(current_function_name)
 
 
-# randomize join time and schedule
-joinTime = "10:0" + str(random.randint(4, 9))
+# randomize join time and schedule attendance
+def randomizeJoinTime(baseTime):
+    return baseTime + str(random.randint(4, 9))
+
+joinTime = randomizeJoinTime("10:0")
 schedule.every().monday.at(joinTime).do(ed2_func)
 
-joinTime = "09:0" + str(random.randint(4, 9))
+joinTime = randomizeJoinTime("09:0")
 schedule.every().wednesday.at(joinTime).do(ed2_func)
 
-joinTime = "13:0" + str(random.randint(4, 9))
+joinTime = randomizeJoinTime("13:0")
 schedule.every().monday.at(joinTime).do(hab1_func)
 
-joinTime = "15:0" + str(random.randint(4, 9))
+joinTime = randomizeJoinTime("15:0")
 schedule.every().thursday.at(joinTime).do(networking_func)
 
-joinTime = "14:0" + str(random.randint(4, 9))
+joinTime = randomizeJoinTime("14:0")
 schedule.every().friday.at(joinTime).do(mikrodalga1_func)
 
-joinTime = "12:0" + str(random.randint(4, 9))
+joinTime = randomizeJoinTime("12:0")
 schedule.every().tuesday.at(joinTime).do(emat_func)
 
 
