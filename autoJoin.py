@@ -14,6 +14,7 @@ import pyautogui
 import os
 import smtplib
 import inspect
+import random
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -297,22 +298,24 @@ def turkce1_func():
         sendMail(current_function_name)
 
 
-schedule.every().monday.at("10:08").do(ed2_func)
-schedule.every().wednesday.at("09:08").do(ed2_func)
+# randomize join time and schedule
+joinTime = "10:0" + str(random.randint(4, 9))
+schedule.every().monday.at(joinTime).do(ed2_func)
 
-schedule.every().monday.at("13:08").do(hab1_func)
+joinTime = "09:0" + str(random.randint(4, 9))
+schedule.every().wednesday.at(joinTime).do(ed2_func)
 
-schedule.every().thursday.at("15:04").do(networking_func)
+joinTime = "13:0" + str(random.randint(4, 9))
+schedule.every().monday.at(joinTime).do(hab1_func)
 
-schedule.every().tuesday.at("09:02").do(ed1lab_func)
+joinTime = "15:0" + str(random.randint(4, 9))
+schedule.every().thursday.at(joinTime).do(networking_func)
 
-schedule.every().friday.at("14:03").do(mikrodalga1_func)
+joinTime = "14:0" + str(random.randint(4, 9))
+schedule.every().friday.at(joinTime).do(mikrodalga1_func)
 
-schedule.every().tuesday.at("12:03").do(emat_func)
-
-schedule.every().wednesday.at("13:03").do(turkce1_func)
-
-schedule.every().monday.at("16:40").do(lojik_func)
+joinTime = "12:0" + str(random.randint(4, 9))
+schedule.every().tuesday.at(joinTime).do(emat_func)
 
 
 print('*** OLCEGI %100 YAPMAYI UNUTMA ***')
@@ -320,7 +323,6 @@ print('*** OLCEGI %100 YAPMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
 
-mikrodalga1_func()
 
 while True:
     schedule.run_pending()
