@@ -17,22 +17,23 @@ def randomizeJoinTime(baseTime):
 def scheduleToJoin(joinTime, day, subjectFunc):
     joinTime = randomizeJoinTime(joinTime)
 
-    if day.lower() == 'monday':
-        schedule.every().monday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'tuesday':
-        schedule.every().tuesday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'wednesday':
-        schedule.every().wednesday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'thursday':
-        schedule.every().thursday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'friday':
-        schedule.every().friday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'saturday':
-        schedule.every().saturday.at(joinTime).do(subjectFunc)
-    elif day.lower() == 'sunday':
-        schedule.every().sunday.at(joinTime).do(subjectFunc)
-    else:
-        print("Couldn't schedule to join. Potential typo in 'joinTime' or 'day' variable.")
+    try:
+        if day.lower() == 'monday':
+            schedule.every().monday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'tuesday':
+            schedule.every().tuesday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'wednesday':
+            schedule.every().wednesday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'thursday':
+            schedule.every().thursday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'friday':
+            schedule.every().friday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'saturday':
+            schedule.every().saturday.at(joinTime).do(subjectFunc)
+        elif day.lower() == 'sunday':
+            schedule.every().sunday.at(joinTime).do(subjectFunc)
+    except:
+        print(f"Couldn't schedule to join. Potential typo in 'joinTime' or 'day' variable.")
 
 
 #  In my case, only 2 parameters vary while joining classes, which are subject name and 'canli ders' button.
@@ -49,7 +50,7 @@ mikrodalga1_func = myUtil.generateSubjectFunc('//*[@id="app-container"]/div[4]/d
 networking_func = myUtil.generateSubjectFunc('//*[@id="app-container"]/div[4]/div[2]/div/ul/li[7]/a/span[2]',
                                              '//*[@id="menu-82e5d5ca-9d0e-422b-a110-a7fb77afc051"]/ul/li[2]/a/span')
 
-scheduleToJoin('09:00', 'monday', lojik_func)
+scheduleToJoin('09:0', 'monday', lojik_func)
 scheduleToJoin('11:00', 'wednesday', turkce1_func)
 scheduleToJoin('15:00', 'thursday', networking_func)
 scheduleToJoin('14:00', 'friday', mikrodalga1_func)
@@ -59,6 +60,7 @@ print('*** OLCEGI %100 YAPMAYI UNUTMA ***')
 print('*** OLCEGI %100 YAPMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
 print('*** YONETICI OLARAK CALISTIRMAYI UNUTMA ***')
+
 
 while True:
     schedule.run_pending()
