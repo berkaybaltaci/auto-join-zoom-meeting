@@ -33,7 +33,7 @@ def scheduleToJoin(joinTime, day, subjectFunc):
         elif day.lower() == 'sunday':
             schedule.every().sunday.at(joinTime).do(subjectFunc)
     except:
-        print(f"Couldn't schedule to join. Potential typo in 'joinTime' or 'day' variable.")
+        print("Couldn't schedule to join. Potential typo in 'joinTime' or 'day' variable.")
 
 
 #  In my case, only 2 parameters vary while joining classes, which are subject name and 'canli ders' button.
